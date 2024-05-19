@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index
+    yum:
+      update_cache: yes
+
+  - name: remove telnet package
+    yum:
+      name: telnet
+      state: absent
+
+  - name: remove dcpdump
+    yum:
+      name: tcpdump
+      state: absent

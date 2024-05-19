@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index
+    yum:
+      update_cache: yes
+
+  - name: install telnet package
+    yum:
+      name: telnet
+      state: latest
+
+  - name: install dcpdump
+    yum:
+      name: tcpdump
+      state: latest
